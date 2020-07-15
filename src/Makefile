@@ -1,9 +1,9 @@
-CC = g++
+CC = emcc
 src = $(wildcard *.c)
 obj = $(src:.c=.o)
-name = test
+name = wasm-fun
 
-STANDARD_CFLAGS = -Wall -g #-std=c18
+STANDARD_CFLAGS = -Wall -std=c18 -Os
 ifeq ($(CC),g++)
 	SDL_CFLAGS := $(shell sdl2-config --cflags)
 	SDL_LDFLAGS := $(shell sdl2-config --libs)
